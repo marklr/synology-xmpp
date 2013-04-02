@@ -53,7 +53,11 @@ In the administrative UI, configure the SMS provider (Control Panel -> Notificat
     http://localhost:10500/?user=&password=&to=&text=Hello+World
 
 Press "Next", and assign the following categories:
-
+	
+	User = your XMPP username including the domain (E.G. "jdoe@gmail.com")
+	Password = your password (you should always use 2-factor auth and generate an application password)
+	To = Phone number (unused, obviously)
+	Text = Message text
 
 Press the "Send a test SMS message" button to test.
 
