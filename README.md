@@ -1,7 +1,7 @@
 Using XMPP for notifications on a Synology NAS
 ==============================================
 
-Adapted in part from https://github.com/miracle2k/synology-sipgate-sms
+Adapted from https://github.com/miracle2k/synology-sipgate-sms
 
 Pre-Requisites
 --------------
@@ -60,4 +60,4 @@ Press the "Send a test SMS message" button to test.
 Debugging
 ---------
 
-You can run ``python2.7 server.py`` on the console to get output. Alternatively, when running as a daemon, a log file will be created in ``/var/log/sipgate-xmpp.log``. You can modify it's location in the ``config.py`` file.
+You can run ``python2.7 server.py`` on the console to get output. Alternatively, when running as a daemon, a log file will be created in ``/var/log/sipgate-xmpp.log``.
