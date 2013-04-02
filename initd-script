@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# This would otherwise be set in a user's .profile and
+# thus not be available during the boot process, causing
+# the script to not run if a relative shebang is used.
+export PATH=/opt/bin:/opt/sbin:$PATH
+
+SCRIPT=/opt/local//opt/local/synology-xmpp/server.py
+
+case "$1" in
+    start)
+        echo "Starting synology-xmpp daemon"
+	     [ -x $SCRIPT ] && $SCRIPT -d
+    ;;
+    *)
+        echo "Usage: $0 {start}"
+        exit 1
+esac
+
+exit 0

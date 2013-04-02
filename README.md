@@ -20,14 +20,15 @@ Python and XMPP.py
 Installation
 ------------
     $ cd /opt/local
-    $ curl -L https://github.com/marklr/synology-xmpp/tarball/master | tar -xzv
+    $ curl -k -L https://github.com/marklr/synology-xmpp/tarball/master | tar -xzv
     $ mv marklr-synology-xmpp-* synology-xmpp
     $ cd synology-xmpp && /opt/local/bin/pip install -r requirements.txt
+    $ chmod 755 server.py
 
 Create the configuration file and adjust the parameters:
 
     $ cd /opt/local/synology-xmpp
-    $ cp config.py.template config.py
+    $ cp config.py.dist config.py
     $ vi config.py
 
 Configuration Parameters

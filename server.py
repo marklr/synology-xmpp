@@ -19,21 +19,20 @@ class BadRequest(Exception):
 
 def send_xmpp_message(params, environ):
     try:
-        user = params['user'].strip()
+        user, dom = params['user'].strip().split('@')
         password = params['password'].strip()
         message = params['text'].strip()
-    except KeyError, e:
-        raise BadRequest("Missing url parameter: %s" % e)
+    except (ValueError, KeyError) as e:
+        raise BadRequest("Missing/invalid parameter: %s" % e)
 
     for dst in config.DESTINATIONS:
         logger.info('Request: user=%s, to=%s: %s'.format(user, dst, message))
         try:
-            user, dom = user.split('@')
             client = xmpp.Client(dom)
             client.connect(server=config.XMPP_SERVER)
             client.auth(user=user, password=password, sasl=0)
             client.send(xmpp.Message(dst, message))
-        except Exception, e:
+        except Exception as e:
             logger.warn(traceback.format_exc())
     return 'ok'
 
