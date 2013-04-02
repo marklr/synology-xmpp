@@ -1,0 +1,5 @@
+PORT = 10500
+LOGFILE = '/var/log/sipgate-sms.log'
+
+XMPP_SERVER = ('talk.google.com', 5222)
+DESTINATIONS = ('example@example.com', 'admin@example.net')
