@@ -56,11 +56,20 @@ Press "Next", and assign the following categories:
 	
 	User = your XMPP username including the domain (E.G. "jdoe@gmail.com")
 	Password = your password (you should always use 2-factor auth and generate an application password)
-	To = Phone number (unused, obviously)
+	To = Phone number (unused in this case but supported in the CLI, see below)
 	Text = Message text
 
 Press the "Send a test SMS message" button to test.
 
+
+CLI Usage
+---------
+
+If the server is running, you can send XMPP messages from the shell directly:
+
+	 http://localhost:10500/?user=<xmpp_id>&password=<xmpp_pass>&to=<xmpp_destination>&text=Hello+World
+
+Note that you must use your complete XMPP username, as described above.
 
 Debugging
 ---------

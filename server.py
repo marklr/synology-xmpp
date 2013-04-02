@@ -25,7 +25,10 @@ def send_xmpp_message(params, environ):
     except (ValueError, KeyError) as e:
         raise BadRequest("Missing/invalid parameter: %s" % e)
 
-    for dst in config.DESTINATIONS:
+    dests = config.DESTINATIONS
+    if "to" in params and "@" in params.get('to', ''):
+        dests += (params['to'].strip(), )
+    for dst in dests:
         logger.info('Request: user=%s, to=%s: %s'.format(user, dst, message))
         try:
             client = xmpp.Client(dom)
