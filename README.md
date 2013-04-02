@@ -13,8 +13,8 @@ ipkg
 Python and XMPP.py
 -------------------
 	$ ipkg install python27
-	$ curl -O http://peak.telecommunity.com/dist/ez_setup.py
-	$ curl -O https://raw.github.com/pypa/pip/master/contrib/get-pip.py
+	$ curl -k -O http://peak.telecommunity.com/dist/ez_setup.py
+	$ curl -k -O https://raw.github.com/pypa/pip/master/contrib/get-pip.py
 	$ python2.7 ez_setup.py && python2.7 get-pip.py && rm ez_setup.py get-pip.py
 
 Installation
